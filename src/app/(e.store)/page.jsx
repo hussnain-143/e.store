@@ -27,7 +27,7 @@ const page = () => {
           <div className="md:w-1/2 flex justify-end z-10">
             {/* Using Next.js Image component for optimized images */}
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjTxHXBqa8QdVutEAQ-cGd_ct0TGWS_GiS2g&s" // Replace with your hero image path
+              src="https://cdn.pixabay.com/photo/2024/05/28/08/19/ai-generated-8793193_1280.png" // Replace with your hero image path
               alt="E.Store Hero Banner"
               width={600} // Specify width
               height={400} // Specify height
