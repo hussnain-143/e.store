@@ -3,10 +3,15 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
+import { useSelector } from "react-redux";
+
 
 const Header = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const cart = useSelector((state) => state.cart);
+
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -55,9 +60,13 @@ const Header = () => {
                 <FiShoppingCart className="h-6 w-6 text-gray-700" />{" "}
                 {/* Adjusted icon color */}
                 {/* Optional: Cart item count */}
-                <span className="absolute top-0 right-0 block h-4 w-4 rounded-full bg-red-500 text-white text-xs text-center">
-                  3
+              {
+                 cart.totalQuantity > 0 && (
+                    <span className="absolute top-0 right-0 block h-4 w-4 rounded-full bg-red-500 text-white text-xs text-center">
+                  {cart.totalQuantity}
                 </span>
+                )
+              }
               </Link>
             </div>
           </nav>

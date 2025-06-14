@@ -1,8 +1,27 @@
+'use client'
+import {  useDispatch } from "react-redux";
+import { addItemToCart } from "@/store/slices/cartSlice"; 
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
-const BestSelling = async () => {
-    const response = await fetch("https://fakestoreapi.com/products?limit=7");
-    const bestSellingProducts = await response.json();
+const BestSelling =  () => {
+    const dispatch = useDispatch();
+
+        const [bestSellingProducts, setbestSellingProducts] = useState([]);
+    
+        useEffect(() => {
+            const fetchBestSelling = async () => {
+                try {
+                    const response = await  fetch("https://fakestoreapi.com/products?limit=7");
+                    const data = await response.json();
+                    setbestSellingProducts(data);
+                } catch (error) {
+                    console.error("Failed to fetch featured products:", error);
+                }
+            };
+    
+            fetchBestSelling();
+        }, []);
 
     return (
         <div >
@@ -33,7 +52,9 @@ const BestSelling = async () => {
                                     </Link>
                                 </h3>
                                 <p className="text-gray-900 font-bold text-lg">${product.price}</p>
-                                <button className="mt-4 w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-700 transition-colors duration-200">
+                                <button className="mt-4 w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-700 transition-colors duration-200"
+                                 onClick={() => dispatch(addItemToCart(product))}
+                                >
                                     Add to Cart
                                 </button>
                             </div>

@@ -1,9 +1,12 @@
 'use client'
+import {  useDispatch } from "react-redux";
+import { addItemToCart } from "@/store/slices/cartSlice"; 
 import React, { useState, useEffect } from 'react'
 
 const Product = ({ params }) => {
    
     const productID  = params;
+    const dispatch = useDispatch();
 
     const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(true);
@@ -108,7 +111,9 @@ const Product = ({ params }) => {
                     </div>
                 </div>
 
-                <button className="w-full lg:w-auto bg-cyan-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-cyan-700 transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-opacity-75">
+                <button className="w-full lg:w-auto bg-cyan-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-cyan-700 transform hover:scale-105 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-opacity-75"
+                 onClick={() => dispatch(addItemToCart(product))}
+                >
                     Add to Cart
                 </button>
             </div>
