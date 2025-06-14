@@ -41,7 +41,7 @@ const BestSelling = async () => {
                     ))}
                 </div>
                 <div className="text-center mt-12">
-                    <Link href="/products"
+                    <Link href="/product"
                         className="inline-block px-8 py-3 border border-cyan-600 text-cyan-600 font-semibold rounded-full hover:bg-cyan-600 hover:text-white transition-all duration-300">
                         View All Products
 

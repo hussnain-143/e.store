@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import FeaturedProducts from "@/Components/FeaturedProducts";
 import BestSelling from "@/Components/BestSelling";
+import { Suspense } from "react";
 
 const page = () => {
   return (
@@ -11,10 +12,12 @@ const page = () => {
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
           <div className="text-center md:text-left md:w-1/2 z-10 mb-10 md:mb-0">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-              Discover Quality Products <br className="hidden md:inline" /> at E.Store
+              Discover Quality Products <br className="hidden md:inline" /> at
+              E.Store
             </h1>
             <p className="text-lg md:text-xl mb-8 opacity-90 max-w-md mx-auto md:mx-0">
-              Your one-stop shop for the latest electronics, fashion, and home essentials.
+              Your one-stop shop for the latest electronics, fashion, and home
+              essentials.
             </p>
             {/* Corrected Link usage for Next.js 13+ */}
             <Link
@@ -31,7 +34,6 @@ const page = () => {
               alt="E.Store Hero Banner"
               width={600} // Specify width
               height={400} // Specify height
-              
               className="rounded-lg shadow-2xl transform hover:scale-105 transition duration-500 ease-in-out"
             />
           </div>
@@ -44,10 +46,31 @@ const page = () => {
       </section>
 
       {/* --- Best Selling Products Section --- */}
-      <BestSelling />
+      <Suspense
+        fallback={
+          <>
+            <div className=" flex justify-center items-center h-screen">
+              <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-600"></div>
+            </div>
+          </>
+        }
+      >
+        <BestSelling />
+      </Suspense>
 
       {/* --- Featured Products Section --- */}
-      <FeaturedProducts />
+      <Suspense
+        fallback={
+          <>
+            <div className=" flex justify-center items-center h-screen">
+              <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-600"></div>
+            </div>
+          </>
+        }
+      >
+
+        <FeaturedProducts />
+      </Suspense>
     </div>
   );
 };

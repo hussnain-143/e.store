@@ -44,7 +44,7 @@ const Products = () => {
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center h-screen">
+            <div className=" flex justify-center items-center h-screen">
                 <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-600"></div>
                 <p className="ml-4 text-xl text-gray-700">Loading products...</p>
             </div>
@@ -60,7 +60,7 @@ const Products = () => {
     }
 
     return (
-        <div className='grid grid-cols-1 gap-10 md:grid-cols-4 container mx-auto my-16 px-4'>
+        <div className=' grid grid-cols-1 gap-10 md:grid-cols-4 container mx-auto my-20 px-4'>
             {/* Categories Section */}
             <section className="col-span-1 p-4 md:p-0">
                 <h2 className='text-3xl text-cyan-600 italic font-semibold mb-5'>Categories</h2>

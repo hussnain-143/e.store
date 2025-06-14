@@ -8,15 +8,14 @@ const Footer = () => {
   // Define footer links similar to header's navLinks
   const footerNavLinks = [
     { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Contact Us" },
-    { href: "/returns", label: "Returns" },
-    { href: "/shipping", label: "Shipping Info" },
+    { href: "/", label: "Returns" },
+    { href: "/product", label: "Shipping Info" },
   ];
 
   const legalLinks = [
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
-    { href: "/sitemap", label: "Sitemap" },
+    { href: "/", label: "Sitemap" },
   ];
 
   const socialLinks = [
