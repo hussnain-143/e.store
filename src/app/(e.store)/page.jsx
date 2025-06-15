@@ -21,7 +21,7 @@ const page = () => {
             </p>
             {/* Corrected Link usage for Next.js 13+ */}
             <Link
-              href="/products"
+              href="/product"
               className="bg-white text-cyan-700 px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:bg-gray-100 transform hover:scale-105 transition duration-300"
             >
               Shop Now

@@ -1,5 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import {  useDispatch } from "react-redux";
+import { addItemToCart } from "@/store/slices/cartSlice"; 
 import Link from 'next/link';
 
 const Products = () => {
@@ -8,6 +10,7 @@ const Products = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState('all');
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchProductsAndCategories = async () => {
@@ -107,7 +110,9 @@ const Products = () => {
                                         </Link>
                                     </h3>
                                     <p className="text-gray-900 font-bold text-lg">${product.price}</p>
-                                    <button className="mt-4 w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-700 transition-colors duration-200">
+                                    <button className="mt-4 w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-700 transition-colors duration-200"
+                                     onClick={() => dispatch(addItemToCart(product))}
+                                    >
                                         Add to Cart
                                     </button>
                                 </div>

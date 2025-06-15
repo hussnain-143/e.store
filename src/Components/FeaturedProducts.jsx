@@ -1,10 +1,12 @@
 "use client";
-
+import {  useDispatch } from "react-redux";
+import { addItemToCart } from "@/store/slices/cartSlice"; 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const FeaturedProducts = () => {
     const [featured, setFeatured] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchFeatured = async () => {
@@ -47,7 +49,9 @@ const FeaturedProducts = () => {
                                     </Link>
                                 </h3>
                                 <p className="text-gray-900 font-bold text-lg">${product.price}</p>
-                                <button className="mt-4 w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-700 transition-colors duration-200">
+                                <button className="mt-4 w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-700 transition-colors duration-200"
+                                 onClick={() => dispatch(addItemToCart(product))}
+                                >
                                     Add to Cart
                                 </button>
                             </div>

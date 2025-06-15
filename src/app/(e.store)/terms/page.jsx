@@ -1,3 +1,8 @@
+
+export const metadata = {
+  title: 'Terms'
+}
+
 const TermsPage = () => {
   return (
     <div className="container mx-auto my-16 px-4 py-10 bg-white shadow-2xl rounded-xl border border-gray-100 animate-fade-in-up">
