@@ -62,7 +62,7 @@ const Header = () => {
                 {/* Optional: Cart item count */}
               {
                  cart.totalQuantity > 0 && (
-                    <span className="absolute top-0 right-0 block h-4 w-4 rounded-full bg-red-500 text-white text-xs text-center">
+                    <span className="absolute top-0 right-0 block h-4 w-4 rounded-full bg-cyan-500 text-white text-xs text-center">
                   {cart.totalQuantity}
                 </span>
                 )
