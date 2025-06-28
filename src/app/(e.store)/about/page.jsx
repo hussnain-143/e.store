@@ -15,7 +15,7 @@ const AboutPage = () => {
         <span className="text-cyan-600 mr-2 text-4xl">●</span> Our Story
       </h2>
       <p className="text-lg text-gray-700 leading-relaxed mb-8">
-        Founded in **[Current Year - 5]** by **a passionate team of e-commerce enthusiasts**, our journey began with a simple vision: to create a trusted online destination where customers could easily find high-quality products at competitive prices. Our passion for **customer satisfaction** and **innovative retail solutions** drove us to build e.store from the ground up, turning our hard work and inspiration into a thriving online marketplace.
+        Founded in **[ 2025 ]** by **a passionate team of e-commerce enthusiasts**, our journey began with a simple vision: to create a trusted online destination where customers could easily find high-quality products at competitive prices. Our passion for **customer satisfaction** and **innovative retail solutions** drove us to build e.store from the ground up, turning our hard work and inspiration into a thriving online marketplace.
       </p>
 
       <h2 className="text-3xl font-bold text-gray-800 mb-5 mt-10 flex items-center">
